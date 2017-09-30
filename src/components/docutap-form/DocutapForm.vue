@@ -35,6 +35,10 @@ export default {
             item.component = 'docutap-submit'
             item.input = false
             item.validator = false
+          } else if (item.type === 'info') {
+            item.component = 'docutap-info'
+            item.input = false
+            item.validator = false
           } else {
             item.component = 'docutap-input'
           }
