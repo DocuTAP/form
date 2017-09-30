@@ -15,7 +15,7 @@
   };
 </script>
 
-<style src="./DocutapInfo.css" scoped>
+<style scoped>
   .docutap-info {
     padding-top: 2em;
   }
