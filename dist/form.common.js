@@ -21,7 +21,7 @@ function install (Vue) {
   Vue.component('docutap-submit', DocutapSubmit);
 }
 
-var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('form',{attrs:{"novalidate":""},on:{"submit":function($event){$event.preventDefault();_vm.validateBeforeSubmit($event);}}},_vm._l((_vm.schemaItems),function(item){return _c(item.component,{key:item.name,tag:"component",attrs:{"schema":item,"model":_vm.model,"showErrors":_vm.showErrors}})}))},staticRenderFns: [],
+var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('form',{staticClass:"docutap-form",attrs:{"novalidate":""},on:{"submit":function($event){$event.preventDefault();_vm.validateBeforeSubmit($event);}}},_vm._l((_vm.schemaItems),function(item){return _c(item.component,{key:item.name,tag:"component",attrs:{"schema":item,"model":_vm.model,"showErrors":_vm.showErrors}})}))},staticRenderFns: [],
   name: 'docutap-form',
   $validates: true,
   props: {
@@ -51,6 +51,10 @@ var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var
             item.component = "docutap-" + (item.type);
           } else if (item.type === 'submit') {
             item.component = 'docutap-submit';
+            item.input = false;
+            item.validator = false;
+          } else if (item.type === 'info') {
+            item.component = 'docutap-info';
             item.input = false;
             item.validator = false;
           } else {
@@ -108,9 +112,22 @@ function install$1 (Vue) {
   Vue.component('docutap-form', DocutapForm);
 }
 
+var DocutapInfo = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{staticClass:"docutap-info",class:[_vm.themeClass],attrs:{"disabled":_vm.disabled}},[(_vm.schema.image)?_c('img',{attrs:{"src":_vm.schema.image}}):_vm._e(),(_vm.schema.text || _vm.schema.label)?_c('p',{staticClass:"intro-content"},[_vm._v(_vm._s(_vm.schema.text || _vm.schema.label))]):_vm._e()])},staticRenderFns: [],_scopeId: 'data-v-c71a386c',
+  props: {
+    schema: {
+      type: Object
+    }
+  }
+};
+
+function install$2 (Vue) {
+  Vue.component('docutap-info', DocutapInfo);
+}
+
 var options = {
   DocutapSubmit: install,
-  DocutapForm: install$1
+  DocutapForm: install$1,
+  DocutapInfo: install$2
 };
 
 options.install = function (Vue) {
