@@ -15,9 +15,9 @@ DocuTAP Form requires the following dependencies: [Vee Validate](https://github.
 
 ```bash
 npm install --save vee-validate
-npm install --save git+ssh://git@bitbucket.org/docutap/form.git#25c74bc
-npm install --save git+ssh://git@bitbucket.org/docutap/inputs.git#0ffc4b3
-npm install --save git+ssh://git@bitbucket.org/docutap/ui.git#25c74bc
+npm install --save git+ssh://git@bitbucket.org/docutap/form.git#d31f3aa
+npm install --save git+ssh://git@bitbucket.org/docutap/inputs.git#d31f3aa
+npm install --save git+ssh://git@bitbucket.org/docutap/ui.git#4ef21b4
 ```
 
 When updating the commit-ish from Bitbucket make sure to source from the [`dist` branch](https://bitbucket.org/docutap/form/branch/dist).
