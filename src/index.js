@@ -1,9 +1,11 @@
 import DocutapSubmit from './components/docutap-submit'
 import DocutapForm from './components/docutap-form'
+import DocutapInfo from './components//docutap-info'
 
 const options = {
   DocutapSubmit,
-  DocutapForm
+  DocutapForm,
+  DocutapInfo
 }
 
 options.install = (Vue) => {

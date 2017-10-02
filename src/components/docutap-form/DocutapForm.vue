@@ -1,5 +1,5 @@
 <template>
-  <form novalidate @submit.prevent="validateBeforeSubmit">
+  <form class="docutap-form" novalidate @submit.prevent="validateBeforeSubmit">
     <component v-for="item in schemaItems" :key="item.name" :schema="item" :is="item.component" :model="model" :showErrors="showErrors"></component>
   </form>
 </template>
@@ -33,6 +33,10 @@ export default {
             item.component = `docutap-${item.type}`
           } else if (item.type === 'submit') {
             item.component = 'docutap-submit'
+            item.input = false
+            item.validator = false
+          } else if (item.type === 'info') {
+            item.component = 'docutap-info'
             item.input = false
             item.validator = false
           } else {
@@ -84,3 +88,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  .docutap-form {
+    margin: 80px auto;
+    max-width: 500px !important;
+  }
+</style>
