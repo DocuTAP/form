@@ -1,6 +1,6 @@
 /*!
  * @docutap/form v0.0.0
- * (c) 2017 adriancarriger
+ * (c) 2018 adriancarriger
  * Released under the MIT License.
  */
 
@@ -23,7 +23,7 @@ function install (Vue) {
   Vue.component('docutap-submit', DocutapSubmit);
 }
 
-var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('form',{staticClass:"docutap-form",attrs:{"novalidate":""},on:{"submit":function($event){$event.preventDefault();_vm.validateBeforeSubmit($event);}}},_vm._l((_vm.schemaItems),function(item){return _c(item.component,{key:item.name,tag:"component",attrs:{"schema":item,"model":_vm.model,"showErrors":_vm.showErrors}})}))},staticRenderFns: [],
+var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('form',{staticClass:"docutap-form",attrs:{"novalidate":""},on:{"submit":function($event){$event.preventDefault();_vm.validateBeforeSubmit($event);}}},_vm._l((_vm.schemaItems),function(item){return _c(item.component,{key:item.name,tag:"component",class:item.class,attrs:{"schema":item,"model":_vm.model,"showErrors":_vm.showErrors}})}))},staticRenderFns: [],
   name: 'docutap-form',
   $validates: true,
   props: {
@@ -65,6 +65,8 @@ var DocutapForm = {render: function(){var _vm=this;var _h=_vm.$createElement;var
         }
         // Set default validator
         if (item.validator === undefined) { item.validator = ''; }
+        // Set default class
+        if (item.class === undefined) { item.class = ''; }
         // Set default type if input
         if (item.component === 'docutap-input' && item.type === undefined) { item.type = 'text'; }
         // Create
