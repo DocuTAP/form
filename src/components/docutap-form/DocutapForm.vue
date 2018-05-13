@@ -100,7 +100,7 @@ export default {
   .docutap-form [type="submit"] {
     border-radius: 2rem;
     font-size: 1.07rem;
-    height: 3.57rem;
+    height: 2.813rem;
     margin-top: 2.5rem;
     width: 88%;
   }
