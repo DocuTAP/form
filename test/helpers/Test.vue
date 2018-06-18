@@ -38,7 +38,7 @@ export default {
 }
 </script>
 
-<style src="vue-material/dist/vue-material.css"></style>
+<style src="@docutap-api/ui/dist/ui.css"></style>
 <style>
 @charset "utf-8";
 

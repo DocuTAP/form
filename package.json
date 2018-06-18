@@ -1,8 +1,14 @@
 {
-  "name": "@docutap/form",
-  "version": "0.0.0",
+  "name": "@docutap-api/form",
+  "version": "0.0.0-development",
+  "homepage": "https://github.com/DocuTAP/form",
+  "registry": "github",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DocuTAP/form.git"
+  },
   "description": "A Vue.js Plugin",
-  "author": "adriancarriger <acarriger@docutap.com>",
+  "author": "Adrian Carriger <acarriger@docutap.com>",
   "main": "dist/form.common.js",
   "module": "./@docutap/form.esm.js",
   "browser": "dist/form.js",
@@ -38,18 +44,7 @@
   },
   "pre-commit": "lint:staged",
   "devDependencies": {
-    "buble": "^0.15.2",
-    "clean-css": "^4.0.0",
-    "mkdirp": "^0.5.1",
-    "rollup": "^0.41.6",
-    "rollup-plugin-buble": "^0.15.0",
-    "rollup-plugin-commonjs": "^8.0.0",
-    "rollup-plugin-jsx": "^1.0.0",
-    "rollup-plugin-node-resolve": "^3.0.0",
-    "rollup-plugin-postcss": "^0.4.1",
-    "rollup-plugin-replace": "^1.1.0",
-    "rollup-plugin-vue": "^2.3.0",
-    "uglify-js": "^3.0.0",
+    "@docutap-api/ui": "^1.1.1",
     "add-asset-html-webpack-plugin": "^2.0.0",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.0",
@@ -61,8 +56,11 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.4.0",
     "babel-preset-env": "^1.4.0",
+    "buble": "^0.15.2",
     "chai": "^3.5.0",
     "chai-dom": "^1.4.0",
+    "clean-css": "^4.0.0",
+    "condition-circle": "^2.0.1",
     "cross-env": "^4.0.0",
     "css-loader": "^0.28.0",
     "eslint": "^3.19.0",
@@ -80,12 +78,23 @@
     "karma-spec-reporter": "^0.0.31",
     "karma-webpack": "^2.0.0",
     "lint-staged": "^3.4.0",
+    "mkdirp": "^0.5.1",
     "mocha": "^3.3.0",
     "mocha-css": "^1.0.1",
     "postcss": "^6.0.0",
     "postcss-cssnext": "^2.10.0",
     "pre-commit": "^1.2.0",
     "rimraf": "^2.6.0",
+    "rollup": "^0.41.6",
+    "rollup-plugin-buble": "^0.15.0",
+    "rollup-plugin-commonjs": "^8.0.0",
+    "rollup-plugin-jsx": "^1.0.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-postcss": "^0.4.1",
+    "rollup-plugin-replace": "^1.1.0",
+    "rollup-plugin-vue": "^2.3.0",
+    "semantic-commitlint": "^1.3.2",
+    "semantic-release": "^15.5.5",
     "sinon": "2.2.0",
     "sinon-chai": "^2.10.0",
     "style-loader": "^0.17.0",
@@ -93,11 +102,11 @@
     "stylelint": "^7.10.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-processor-html": "^1.0.0",
+    "uglify-js": "^3.0.0",
     "uppercamelcase": "^3.0.0",
     "vee-validate": "^2.0.0-rc.17",
     "vue": "^2.3.0",
     "vue-loader": "^12.0.0",
-    "vue-material": "file:../ui",
     "vue-template-compiler": "^2.3.0",
     "webpack": "^2.5.0",
     "webpack-bundle-analyzer": "^2.4.0",
@@ -126,8 +135,20 @@
       "style-loader/addStyles.js"
     ]
   },
-  "license": {
-    "type": "MIT",
-    "url": "http://www.opensource.org/licenses/mit-license.php"
+  "release": {
+    "branch": "develop",
+    "verifyConditions": [
+      "@semantic-release/git",
+      "@semantic-release/github",
+      "condition-circle"
+    ],
+    "getLastRelease": "@semantic-release/git",
+    "verifyRelease": [
+      "semantic-commitlint"
+    ]
+  },
+  "publishConfig": {
+    "tag": "latest",
+    "access": "public"
   }
 }

@@ -3,11 +3,11 @@ import Vue from 'vue/dist/vue.js'
 import Test from './Test.vue'
 
 import VeeValidate from 'vee-validate'
-import VueMaterial from 'vue-material'
+import DocutapUi from '@docutap-api'
 
 // Global dependencies
 Vue.use(VeeValidate)
-Vue.use(VueMaterial)
+Vue.use(DocutapUi)
 
 Vue.config.productionTip = false
 
