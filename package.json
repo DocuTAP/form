@@ -7,6 +7,7 @@
     "type": "git",
     "url": "https://github.com/DocuTAP/form.git"
   },
+  "license" : "GPL-3.0",
   "description": "A Vue.js Plugin",
   "author": "Adrian Carriger <acarriger@docutap.com>",
   "main": "dist/form.common.js",
@@ -144,6 +145,7 @@
     ],
     "getLastRelease": "@semantic-release/git",
     "verifyRelease": [
+      "semantic-commitlint"
     ]
   },
   "publishConfig": {
