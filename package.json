@@ -144,7 +144,6 @@
     ],
     "getLastRelease": "@semantic-release/git",
     "verifyRelease": [
-      "semantic-commitlint"
     ]
   },
   "publishConfig": {
