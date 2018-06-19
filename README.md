@@ -1,42 +1,40 @@
-# DocuTAP Form
+# DocuTAP Form [![npm version](https://badge.fury.io/js/%40docutap-api%2Fform.svg)](https://badge.fury.io/js/%40docutap-api%2Fform)
 
-DocuTAP Form is a form builder library built for [Vue.js](https://vuejs.org/) that builds upon [DocuTAP UI](https://bitbucket.org/docutap/ui/overview) and [DocuTAP Inputs](https://bitbucket.org/docutap/inputs/overview)
+DocuTAP Form is a form builder library built for [Vue.js](https://vuejs.org/) that builds upon [DocuTAP UI](https://github.com/DocuTAP/ui) and [DocuTAP Inputs](https://github.com/DocuTAP/inputs)
 
 ## Features
 
-* Creates a form from a simple object
-* Implements the [Vee Validate](https://github.com/baianat/vee-validate) validation library for Vue.js
+- Creates a form from a simple object
+- Implements the [Vee Validate](https://github.com/baianat/vee-validate) validation library for Vue.js
 
 ## Installation
 
 ### Dependencies
 
-DocuTAP Form requires the following dependencies: [Vee Validate](https://github.com/baianat/vee-validate), [DocuTAP UI](https://bitbucket.org/docutap/ui/overview), and [DocuTAP Inputs](https://bitbucket.org/docutap/inputs/overview).
+DocuTAP Form requires the following dependencies: [Vee Validate](https://github.com/baianat/vee-validate), [DocuTAP UI](https://github.com/DocuTAP/ui), and [DocuTAP Inputs](https://github.com/DocuTAP/inputs).
 
 ```bash
+# Peer dependency
 npm install --save vee-validate
-npm install --save git+ssh://git@bitbucket.org/docutap/form.git#d31f3aa
-npm install --save git+ssh://git@bitbucket.org/docutap/inputs.git#d31f3aa
-npm install --save git+ssh://git@bitbucket.org/docutap/ui.git#4ef21b4
+# @docutap dependencies
+npm install --save @docutap-api/ui @docutap-api/inputs @docutap-api/form
 ```
-
-When updating the commit-ish from Bitbucket make sure to source from the [`dist` branch](https://bitbucket.org/docutap/form/branch/dist).
 
 ## Usage
 
 `main.js`
 
 ```javascript
-import DocutapForm from '@docutap/form'
-import DocutapInputs from '@docutap/inputs'
-import DocutapUi from '@docutap/ui'
-import Vue from 'vue'
-import VeeValidate from 'vee-validate'
+import DocutapForm from '@docutap/form';
+import DocutapInputs from '@docutap/inputs';
+import DocutapUi from '@docutap/ui';
+import Vue from 'vue';
+import VeeValidate from 'vee-validate';
 
-Vue.use(DocutapUi)
-Vue.use(DocutapInputs)
-Vue.use(DocutapForm)
-Vue.use(VeeValidate)
+Vue.use(DocutapUi);
+Vue.use(DocutapInputs);
+Vue.use(DocutapForm);
+Vue.use(VeeValidate);
 ```
 
 `App.vue`
